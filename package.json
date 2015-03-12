@@ -1,0 +1,29 @@
+{
+  "name": "analytics.example.org",
+  "version": "0.0.1",
+  "description": "Frontend for reporting and publishing analytics data from a Google Analytics account.",
+  "keywords": ["analytics", "google analytics"],
+  "homepage": "https://github.com/polastre/analytics.example.org",
+  "license": "CC0-1.0",
+  "contributors": [
+    {
+      "name": "Gabriel Ramirez",
+      "email": "gabriel.ramirez@gsa.gov"
+    },
+    {
+      "name": "Eric Mill",
+      "email": "eric.mill@gsa.gov"
+    },
+    {
+      "name": "Joe Polastre",
+      "email": "joe@polastre.com"
+    }
+  ],
+  "engines": {"node": ">=0.10.0"},
+  "dependencies": {
+    "gulp": "*"
+  },
+  "devDependencies": {
+    "gulp-ejs": "*"
+  }
+}
