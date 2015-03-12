@@ -1,5 +1,5 @@
 all:
-	./node_modules/gulp/bin/gulp.js all
+	./node_modules/gulp/bin/gulp.js
 
 html:
 	./node_modules/gulp/bin/gulp.js ejs
