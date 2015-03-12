@@ -17,6 +17,8 @@
     "wrh.noaa.gov": "http://www.wrh.noaa.gov"
   };
 
+  var regex_page_title = [
+  ];
 
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
@@ -72,6 +74,16 @@
 
     "today": renderBlock()
       .transform(function(data) {
+        // convert to local time zone from GMT
+        // assumes google analytics is set to GMT as time zone
+        var now = new Date();
+        var h = now.getUTCHours();
+        var d = data['data'].splice(h, 24);
+        var tzOffset = now.getTimezoneOffset() / 60;
+        for (var i = 0; i < d.length; i++) {
+          d[i].hour = (d[i].hour - tzOffset + 24) % 24;
+        }
+        data.data = d;
         return data;
       })
       .render(function(svg, data) {
@@ -94,7 +106,7 @@
               });
 
         series.xScale()
-          .domain(d3.range(0, days.length + 1));
+          .domain(d3.range(0, Math.min(24,days.length + 1)));
 
         series.yScale()
           .domain([0, d3.max(days, y)]);
@@ -169,7 +181,7 @@
       ),
 
     // the top pages block(s)
-    "top-pages": renderBlock()
+    "top-domains": renderBlock()
       .transform(function(d) {
         return d.data;
       })
@@ -183,7 +195,7 @@
           .append("a")
             .attr("target", "_blank")
             .attr("href", function(d) {
-              return exceptions[d.domain] || ("http://" + d.domain);
+              return exceptions[d.domain] || ("https://" + d.domain);
             })
             .text(function(d) {
               return d.domain;
@@ -201,7 +213,7 @@
         .format(formatCommas)),
 
     // the top pages block(s)
-    "top-pages-realtime": renderBlock()
+    "top-pages": renderBlock()
       .transform(function(d) {
         return d.data;
       })
@@ -218,19 +230,25 @@
               return d.page_title;
             })
             .attr("href", function(d) {
-              return exceptions[d.page] || ("http://" + d.page);
+              return exceptions[d.page] ||  ("https://" + d.domain + d.page);;
             })
             .text(function(d) {
-              return d.page_title;
+              var title = d.page_title;
+              if (regex_page_title && regex_page_title.length > 0) {
+                for (var i = 0; i < regex_page_title.length; i++) {
+                  title = title.replace(regex_page_title[i][0], regex_page_title[i][1]);
+                }
+              }
+              return title;
             });
       })
       .render(barChart()
         .label(function(d) { return d.page_title; })
-        .value(function(d) { return +d.active_visitors; })
+        .value(function(d) { if (d.active_visitors) return +d.active_visitors; else return d.visits; })
         .scale(function(values) {
           var max = d3.max(values);
           return d3.scale.linear()
-            .domain([0, 1, d3.max(values)])
+            .domain([0, 1, max])
             .rangeRound([0, 1, 100]);
         })
         .format(formatCommas))
@@ -626,7 +644,10 @@
         })
         .attr("aria-label", title)
         .attr("transform", function(d) {
-          return "translate(" + [d.x, d.y1] + ")";
+          if (d.x) {
+            return "translate(" + [d.x, d.y1] + ")";
+          }
+          return null;
         });
 
       bar.select("rect")
