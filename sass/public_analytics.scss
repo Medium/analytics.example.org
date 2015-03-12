@@ -286,8 +286,10 @@ section {
 #realtime {
   text-align: center;
   padding-top: 0em;
-  padding-bottom: 2em;
+  padding-bottom: 0em;
   .chart_subtitle {
+    position: relative;
+    top: -25px;
     font-size: 2.1em;
     font-weight: 300;
   }
