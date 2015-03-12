@@ -1,12 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
+*, *::after, *::before {
   box-sizing: inherit; }
 
 body {
@@ -16,10 +12,10 @@ body {
   color: #222;
   background: #f9f9f9;
   margin: 0; }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 992px)  {
     body {
       font-size: 14px; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     body {
       font-size: 14px; } }
 
@@ -57,16 +53,16 @@ header {
       clear: both;
       content: "";
       display: table; }
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: 1600px)  {
       header .header_container {
         max-width: 1600px; } }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1200px)  {
       header .header_container {
         max-width: 1200px; } }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 992px)  {
       header .header_container {
         max-width: 992px; } }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px)  {
       header .header_container {
         max-width: 768px; } }
   header #color_bar {
@@ -86,7 +82,7 @@ header {
       text-decoration: none; }
     header h1 a:hover {
       text-decoration: underline; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px)  {
       header h1 {
         float: left;
         display: block;
@@ -107,7 +103,7 @@ header {
     border: none; }
     header #about:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px)  {
       header #about {
         float: left;
         display: block;
@@ -127,7 +123,7 @@ section {
   section h2 {
     font-size: 8em;
     margin: 0; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px)  {
       section h2 {
         font-size: 6em; } }
   section h3 {
@@ -135,7 +131,7 @@ section {
 
 #realtime {
   color: #36435A; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #realtime {
       font-size: 12px; } }
 
@@ -151,16 +147,16 @@ section {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1600px)  {
     .container {
       max-width: 1600px; } }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px)  {
     .container {
       max-width: 1200px; } }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 992px)  {
     .container {
       max-width: 992px; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     .container {
       max-width: 768px; } }
 
@@ -172,7 +168,7 @@ section {
   width: 64.28571%; }
   #main_data:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #main_data {
       float: left;
       display: block;
@@ -190,7 +186,7 @@ section {
   display: block;
   text-align: right;
   margin-top: -2.5rem;
-  font-size: 1.0em;
+  font-size: 1em;
   color: #222; }
 
 #secondary_data {
@@ -200,7 +196,7 @@ section {
   width: 35.71429%; }
   #secondary_data:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #secondary_data {
       float: left;
       display: block;
@@ -230,7 +226,7 @@ section {
   width: 64.28571%; }
   #explanation:last-child, #agencies:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #explanation, #agencies {
       float: left;
       display: block;
@@ -246,7 +242,7 @@ section {
   width: 35.71429%; }
   #data_download:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #data_download {
       float: left;
       display: block;
@@ -258,7 +254,7 @@ section {
 .section_headline {
   padding: 0.1em 1em;
   border-top: 1px solid #e4e4e4; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     .section_headline {
       border-bottom: none; } }
 
@@ -277,7 +273,7 @@ section {
   width: 33.33333%; }
   .three_column:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     .three_column {
       float: left;
       display: block;
@@ -298,10 +294,8 @@ section {
 #realtime {
   text-align: center;
   padding-top: 0em;
-  padding-bottom: 0em; }
+  padding-bottom: 2em; }
   #realtime .chart_subtitle {
-    position: relative;
-    top: -25px;
     font-size: 2.1em;
     font-weight: 300; }
 
@@ -326,17 +320,15 @@ section {
   #coming_soon h2 {
     font-size: 2em;
     margin: 2em auto; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px)  {
     #coming_soon {
       font-size: 12px;
       padding: 2em; } }
 
-#chart_windows .bar-chart .bin,
-#chart_ie .bar-chart .bin {
+#chart_windows .bar-chart .bin, #chart_ie .bar-chart .bin {
   margin-left: 2em;
   margin-bottom: 0rem; }
-  #chart_windows .bar-chart .bin .bar,
-  #chart_ie .bar-chart .bin .bar {
+  #chart_windows .bar-chart .bin .bar, #chart_ie .bar-chart .bin .bar {
     display: none; }
 
 #time_series {
@@ -392,7 +384,7 @@ ul.pills {
     padding: 0;
     display: block; }
   ul.pills {
-    margin: .60rem 0; }
+    margin: .6rem 0; }
   ul.pills > li {
     float: left; }
     ul.pills > li > a {
@@ -446,9 +438,9 @@ ul.pills {
     position: relative;
     z-index: 2;
     min-width: 1px;
-    -webkit-transition: width 0.5s linear;
-    -moz-transition: width 0.5s linear;
-    transition: width 0.5s linear; }
+    -webkit-transition: width .5s linear;
+    -moz-transition: width .5s linear;
+    transition: width .5s linear; }
   .bar-chart .label {
     white-space: nowrap;
     height: 1.5rem;
@@ -465,8 +457,7 @@ ul.pills {
     margin-top: -1.5rem;
     margin-bottom: .45rem; }
 
-g.axis path,
-g.axis line {
+g.axis path, g.axis line {
   fill: none;
   stroke: none; }
 g.axis .tick text {
@@ -490,10 +481,11 @@ figure figure .bar-chart {
 
 *[data-block] {
   opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in 0.5s;
-  -moz-transition: opacity 0.3s ease-in 0.5s;
-  transition: opacity 0.3s ease-in 0.5s; }
+  -webkit-transition: opacity .3s ease-in .5s;
+  -moz-transition: opacity .3s ease-in .5s;
+  transition: opacity .3s ease-in .5s; }
   *[data-block].loading {
     opacity: .8; }
+
 
 /*# sourceMappingURL=public_analytics.css.map */

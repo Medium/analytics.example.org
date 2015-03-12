@@ -24,6 +24,10 @@
     "gulp": "*"
   },
   "devDependencies": {
-    "gulp-ejs": "*"
+    "gulp-ejs": "*",
+    "gulp-sass": "*",
+    "gulp-watch": "*",
+    "gulp-sourcemaps": "*",
+    "node-neat": "*"
   }
 }

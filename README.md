@@ -1,33 +1,29 @@
 ## Public analytics
 
-A collaboration to publish government website analytics.
+A collaboration to publish website analytics.
 
-### Building the Stylesheets
+### Building the Stylesheets and HTML
 
-* Install [Sass](http://sass-lang.com/):
+* Install Gulp and dependences
 
 ```bash
-gem install sass
+npm install
 ```
 
-* To watch the Sass source for changes and build the stylesheets automatically, run:
-
+```bash
+./node_modules/gulp/bin/gulp.js
+```
+or
 ```bash
 make watch
 ```
 
-* To compile the Sass stylesheets once, run:
+* To compile everything, run:
 
 ```bash
-make clean all
+./node_modules/gulp/bin/gulp.js all
 ```
 
-or:
-
-```bash
-# -B tells make to run even if the .css file exists
-make -B
-```
 
 ### Deploying the app
 

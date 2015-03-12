@@ -1,11 +1,11 @@
-@import "bourbon/bourbon";
+@import "bourbon";
 
 //Grid Settings:
 $grid-columns: 14;
 $max-width: em(1560);
 $gutter: 0em !global;
 
-@import "neat/neat";
+@import "neat";
 
 
 @mixin responsive_container {

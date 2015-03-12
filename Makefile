@@ -1,16 +1,14 @@
-scss ?= sass/public_analytics.css.scss
-css ?= css/public_analytics.css
-
-all: styles html
+all:
+	./node_modules/gulp/bin/gulp.js all
 
 html:
-	./node_modules/gulp/bin/gulp.js
+	./node_modules/gulp/bin/gulp.js ejs
 
 styles:
-	sass $(scss):$(css)
+	./node_modules/gulp/bin/gulp.js sass
 
 watch:
-	sass --watch $(scss):$(css)
+	./node_modules/gulp/bin/gulp.js watch
 
 clean:
 	rm -f $(css) index.html
