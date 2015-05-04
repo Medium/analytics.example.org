@@ -41,8 +41,8 @@ $light_gray: #f9f9f9;
 $gray: #e4e4e4;
 
 $dark_gray: #222;
-$light_blue: #3A96B7;
-$dark_blue: #36435A;
+$light_blue: #57ad68;
+$dark_blue: #000;
 $white: #fff;
 $background_color: $light_gray;
 $container_background: $white;
@@ -81,6 +81,10 @@ a, a:visited {
   }
 }
 
+h2, h3, h4, h5, .section_subheadline {
+  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+}
+
 h2 {
   font-size: 4em;
 }
@@ -111,7 +115,7 @@ header {
   }
 
   #color_bar {
-    background: $light_blue;
+    background: $dark_blue;
     height: 6px;
   }
 

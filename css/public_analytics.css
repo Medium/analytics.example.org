@@ -20,10 +20,13 @@ body {
       font-size: 14px; } }
 
 a, a:visited {
-  color: #36435A; }
+  color: #000; }
 
 #usa_dot_gov_header a, #usa_dot_gov_header a:visited {
   color: #fff; }
+
+h2, h3, h4, h5, .section_subheadline {
+  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif; }
 
 h2 {
   font-size: 4em; }
@@ -42,7 +45,7 @@ h5 {
   font-weight: 400; }
 
 header {
-  background: #36435A;
+  background: #000;
   color: white; }
   header .header_container {
     max-width: 97.5em;
@@ -66,7 +69,7 @@ header {
       header .header_container {
         max-width: 768px; } }
   header #color_bar {
-    background: #3A96B7;
+    background: #000;
     height: 6px; }
   header h1 {
     float: left;
@@ -130,7 +133,7 @@ section {
     margin: 10px 0; }
 
 #realtime {
-  color: #36435A; }
+  color: #000; }
   @media screen and (max-width: 768px)  {
     #realtime {
       font-size: 12px; } }
@@ -308,7 +311,7 @@ section {
   left: 0;
   right: 0;
   height: 100%;
-  background: #36435A;
+  background: #000;
   color: white;
   vertical-align: middle;
   padding: 10em; }
@@ -390,7 +393,7 @@ ul.pills {
   ul.pills > li {
     float: left; }
     ul.pills > li > a {
-      color: #36435A;
+      color: #000;
       background: #fff;
       width: 100%;
       text-align: center;
@@ -406,7 +409,7 @@ ul.pills {
         text-decoration: underline; }
       ul.pills > li > a[aria-selected='true'] {
         color: #fff;
-        background: #3A96B7; }
+        background: #57ad68; }
     ul.pills > li:last-child > a {
       border-right: none; }
 
@@ -436,7 +439,7 @@ ul.pills {
       z-index: 1; }
   .bar-chart .bar {
     height: .5rem;
-    background: #3A96B7;
+    background: #57ad68;
     position: relative;
     z-index: 2;
     min-width: 1px;
@@ -467,7 +470,7 @@ g.axis .tick text {
   font-size: .75rem; }
 
 .time-series rect {
-  fill: #3A96B7;
+  fill: #57ad68;
   stroke: #fff;
   stroke-width: 1; }
 .time-series text.label {
