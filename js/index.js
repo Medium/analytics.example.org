@@ -20,6 +20,8 @@
   var regex_page_title = [
   ];
 
+  var domainRegEx = /^(?!\-)(?:[a-zA-Z\d\-]{0,62}[a-zA-Z\d]\.){1,126}(?!\d+)[a-zA-Z\d]{1,63}/;
+
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
       parseDate = d3.time.format("%Y-%m-%d").parse,
@@ -218,6 +220,7 @@
         return d.data;
       })
       .on("render", function(selection, data) {
+        // matches a domain at the start of the string, used for d.page
         // turn the labels into links
         selection.selectAll(".label")
           .each(function(d) {
@@ -230,7 +233,12 @@
               return d.page_title;
             })
             .attr("href", function(d) {
-              return exceptions[d.page] ||  ("https://" + d.domain + d.page);;
+              var url = "https://"
+              // if there'd no domain in the page, add the domain to the url
+              if (!d.page.match(domainRegEx)) {
+                url += (d.domain || "");
+              }
+              return exceptions[d.page] || (url + d.page);;
             })
             .text(function(d) {
               var title = d.page_title;
@@ -279,9 +287,11 @@
         block.on("error.promise", reject);
       });
 
+      var query = window.location.href.slice(window.location.href.indexOf('?'));
+
       d3.select(this)
         .datum({
-          source: this.getAttribute("data-source"),
+          source: this.getAttribute("data-source") + query,
           block: blockId
         })
         .call(block);
